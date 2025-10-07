@@ -9,7 +9,6 @@ int rear = -1;
 int isFull() {
 	return rear == SIZE - 1;
 }
-
 int isEmpty() {
 	return front ==  -1 || front > rear;
 }
@@ -19,11 +18,9 @@ void enqueue(int item) {
 		printf("The queue is full, element cannot be enqueued (Overflow) \n");
 		return;
 	}
-	
 	if(front == -1) {
 		front = 0;
 	}
-	
 	rear++;
 	queue[rear] = item;
 	printf("Enqueued element: %d \n", item);
@@ -34,14 +31,11 @@ int dequeue() {
 		printf("The queue is empty, element cannot be dequeued (Underflow) \n");
 		return -1;
 	}
-	
 	int item = queue[front];
 	front++;
-	
 	if (front > rear) {
         front = rear = -1;
     }
-	
 	return item;
 }
 
@@ -50,19 +44,15 @@ void displayQueue() {
 		printf("The queue is empty \n");
 		return;
 	}
-	
 	printf("The queue elements \n");
-	
 	for(int i = front; i <= rear; i++) {
 		printf("%d \t", queue[i]);
 	}
-	
 	printf("\n");
 }
 
 int main() {
 	int choice, element;
-	
 	while(1) {
 		printf("\nChoose an operation form below:\n");
 		printf("1. Enqueue\n");
@@ -80,18 +70,14 @@ int main() {
             break;
         }
         case 2:{
-            dequeue();
+            dequeue();break;
         }
         case 3:{
-            displayQueue();
+            displayQueue();break;
         }
 
         default:
             break;
         }
-        
     }
     return 0;}
-    
-    
-    
